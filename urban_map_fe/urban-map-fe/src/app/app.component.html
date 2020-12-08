@@ -1,0 +1,121 @@
+
+<div id="wrapper">
+
+
+    <p-toast position="top-center"></p-toast>
+
+    <!-- Sidebar -->
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <div class="sidebar-brand d-flex align-items-center justify-content-center">
+          <div class="sidebar-brand-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <div class="sidebar-brand-text mx-3">U.S.P.</div>
+        </div>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <app-upload-sites
+          [displayMarkerCreator]="displayMarkerCreator"
+          (hideMarkerCreator)="onHide()"
+        ></app-upload-sites>
+
+        <button
+        (click)="showMarkerCreator()"
+        class="btn btn-success" style="width: 75%; align-self: center; margin-top: 20px; margin-bottom: 20px;"
+        type="button" label="Add Sites">
+        <i class="fas fa-plus-square"></i>
+          Add Sites
+        </button>
+
+        <hr class="sidebar-divider my-0">
+      </ul>
+
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <div id="content">
+
+                <!-- Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Urbanization Sites</h1>
+                </div>
+
+                <div class="row">
+                    <!-- LEFT BLOCK -->
+                    <div class="col-lg-6">
+
+                      <div class="card shadow mb-4">
+
+                        <!-- Lesson Notes  -->
+                        <div class="card-header py-3">
+                          <h6 class="m-0 font-weight-bold text-primary">Map</h6>
+                        </div>
+
+                        <div class="card-body">
+                            <div #mapContainer id="map"></div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                      <app-package-downloader></app-package-downloader>
+                  </div>
+            </div>
+        </div>
+
+      </div>
+      <!-- End of Main Content -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->

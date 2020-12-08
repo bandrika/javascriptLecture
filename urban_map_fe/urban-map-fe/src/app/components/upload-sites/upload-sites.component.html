@@ -1,0 +1,12 @@
+<p-dialog header="Upload new Sites" [(visible)]="displayMarkerCreator" [style]="{width: '25vw'}" [baseZIndex]="10000">
+    <form id="siteCreateForm">
+        <div class="form-group">
+          <input *ngIf="displayMarkerCreator" formControlName="sitesZIP" (change)="onFileSelected($event)" type="file" name="fileToUpload" id="fileToUpload">
+            <p-progressSpinner *ngIf="loading" [style]="{width: '50px', height: '50px'}"></p-progressSpinner>
+        </div>
+    </form>
+    <p-footer>
+        <button type="submit" pButton icon="pi pi-check" [disabled]="!sitesZIP" form="siteCreateForm" (click)="addNewSites()" label="Upload Sites"></button>
+        <button type="button" pButton icon="pi pi-times" (click)="hide()" label="Cancel" class="ui-button-secondary"></button>
+    </p-footer>
+</p-dialog>
